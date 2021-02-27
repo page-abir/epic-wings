@@ -99,8 +99,52 @@
                         <input type="text" class="form-control" name="religion" id="religion">
                     </div>
                 </div>
-            </fieldset>
-        </form>
+                <div class="row pt-4">
+                    <div class="col-md-6">
+                        <label for="mother-tongue">Mother Tongue</label>
+                        <input type="text" class="form-control" name="mother-tongue" id="mother-tongue">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="second-language">Second Language the child will study</label>
+                        <div class="special">
+                            <input type="radio" name="second-language" id="second-language" value="Hindi"> Hindi
+                            <input type="radio" name="second-language" id="second-language" value="Bengali"> Bengali
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <label for="medical-condition">Are there any medical conditions of your ward which the school be
+                            aware of</label>
+                        <textarea name="medical-condition" class="form-control" id="medical-condition"
+                            rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-6">
+                        <label for="residential">Residential Address</label>
+                        <textarea name="residential" id="residential" rows="5" class="form-control"></textarea>
+                        <input type="text" name="residential-telephone" id="residential-telephone" class="form-control"
+                            placeholder="Telephone Number">
+                        <input type="text" name="residential-fax" id="residential-fax" class="form-control" placeholder="Fax Number">
+                        <input type="text" name="residential-emergency" id="residential-emergency" class="form-control" placeholder="Emergency Contact Telephone Numbers">
+
+                    </div>
+                    <div class="col-md-6">
+                        <label for="correspondence">Correspondence Address &nbsp;&nbsp;
+                            <input type="checkbox" name="same-as-residential" id="same-as-residential" onclick="copy()"> Same as Residential
+                        </label>
+                        <textarea name="correspondence" id="correspondence" rows="5" class="form-control"></textarea>
+                        <input type="text" name="correspondence-telephone" id="correspondence-telephone" class="form-control"
+                            placeholder="Telephone Number">
+                        <input type="text" name="correspondence-fax" id="correspondence-fax" class="form-control" placeholder="Fax Number">
+                        <input type="text" name="correspondence-emergency" id="correspondence-emergency" class="form-control" placeholder="Emergency Contact Telephone Numbers">
+                    </div>
+                </div>
+    </div>
+    </fieldset>
+    </form>
     </div>
 
     <script>
@@ -127,6 +171,23 @@
 
                     reader.readAsDataURL(input.files[0]);
                 }
+            }
+        }
+
+        function copy(){
+            var checkBox = document.getElementById("same-as-residential");
+            if (checkBox.checked == true){
+                document.getElementById("correspondence").value = document.getElementById("residential").value;
+                document.getElementById("correspondence-telephone").value = document.getElementById("residential-telephone").value;
+                document.getElementById("correspondence-fax").value = document.getElementById("residential-fax").value;
+                document.getElementById("correspondence-emergency").value = document.getElementById("residential-emergency").value;
+
+            } else {
+                document.getElementById("correspondence").value = "";
+                document.getElementById("correspondence-telephone").value = "";
+                document.getElementById("correspondence-fax").value = "";
+                document.getElementById("correspondence-emergency").value = "";
+
             }
         }
     </script>
