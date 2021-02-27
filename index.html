@@ -122,24 +122,96 @@
                     </div>
                 </div>
                 <div class="row pt-4">
-                    <div class="col-md-6">
+                    <div class="col-md-6 pt-2">
                         <label for="residential">Residential Address</label>
                         <textarea name="residential" id="residential" rows="5" class="form-control"></textarea>
-                        <input type="text" name="residential-telephone" id="residential-telephone" class="form-control"
-                            placeholder="Telephone Number">
-                        <input type="text" name="residential-fax" id="residential-fax" class="form-control" placeholder="Fax Number">
-                        <input type="text" name="residential-emergency" id="residential-emergency" class="form-control" placeholder="Emergency Contact Telephone Numbers">
+                        <input type="text" name="residential-telephone" id="residential-telephone"
+                            class="form-control mt-2" placeholder="Telephone Number">
+                        <input type="text" name="residential-fax" id="residential-fax" class="form-control mt-2"
+                            placeholder="Fax Number">
+                        <input type="text" name="residential-emergency" id="residential-emergency"
+                            class="form-control mt-2" placeholder="Emergency Contact Telephone Numbers">
 
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 pt-2">
                         <label for="correspondence">Correspondence Address &nbsp;&nbsp;
-                            <input type="checkbox" name="same-as-residential" id="same-as-residential" onclick="copy()"> Same as Residential
+                            <input type="checkbox" name="same-as-residential" id="same-as-residential" onclick="copy()">
+                            Same as Residential
                         </label>
                         <textarea name="correspondence" id="correspondence" rows="5" class="form-control"></textarea>
-                        <input type="text" name="correspondence-telephone" id="correspondence-telephone" class="form-control"
-                            placeholder="Telephone Number">
-                        <input type="text" name="correspondence-fax" id="correspondence-fax" class="form-control" placeholder="Fax Number">
-                        <input type="text" name="correspondence-emergency" id="correspondence-emergency" class="form-control" placeholder="Emergency Contact Telephone Numbers">
+                        <input type="text" name="correspondence-telephone" id="correspondence-telephone"
+                            class="form-control mt-2" placeholder="Telephone Number">
+                        <input type="text" name="correspondence-fax" id="correspondence-fax" class="form-control mt-2"
+                            placeholder="Fax Number">
+                        <input type="text" name="correspondence-emergency" id="correspondence-emergency"
+                            class="form-control mt-2" placeholder="Emergency Contact Telephone Numbers">
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <label for="hobbies">Hobbies / Field of Interest</label>
+                        <textarea name="hobbies" id="hobbies" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <label for="academic-background">Academy Background Of Child</label>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="previous-school">Previous School</label>
+                                <input type="text" name="previous-school" id="previous-school" class="form-control">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="last-class">Last Class Attended</label>
+                                <input type="text" name="last-class" id="last-class" class="form-control">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="achievements">Any Outstanding achievements</label>
+                                <input type="text" name="achievements" id="achievements" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-2">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Final Marks Of Previous Year</th>
+                                            <th scope="col">Full Marks</th>
+                                            <th scope="col">Marks Obtained</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>English</td>
+                                            <td><input type="number" name="english-full-marks" class="form-control" id="english-full-marks" placeholder="0"></td>
+                                            <td><input type="number" name="english-obtained-marks" class="form-control" id="english-obtained-marks" placeholder="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hindi</td>
+                                            <td><input type="number" name="hindi-full-marks" class="form-control" id="hindi-full-marks" placeholder="0"></td>
+                                            <td><input type="number" name="hindi-obtained-marks" class="form-control" id="hindi-obtained-marks" placeholder="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maths</td>
+                                            <td><input type="number" name="maths-full-marks" class="form-control" id="maths-full-marks" placeholder="0"></td>
+                                            <td><input type="number" name="maths-obtained-marks" class="form-control" id="maths-obtained-marks" placeholder="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Social Science (Hist., Geog.)</td>
+                                            <td><input type="number" name="social-science-full-marks" class="form-control" id="social-science-full-marks" placeholder="0"></td>
+                                            <td><input type="number" name="social-science-obtained-marks" class="form-control" id="social-science-obtained-marks" placeholder="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Science</td>
+                                            <td><input type="number" name="science-full-marks" class="form-control" id="science-full-marks" placeholder="0"></td>
+                                            <td><input type="number" name="science-obtained-marks" class="form-control" id="science-obtained-marks" placeholder="0"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
     </div>
@@ -174,13 +246,15 @@
             }
         }
 
-        function copy(){
+        function copy() {
             var checkBox = document.getElementById("same-as-residential");
-            if (checkBox.checked == true){
+            if (checkBox.checked == true) {
                 document.getElementById("correspondence").value = document.getElementById("residential").value;
-                document.getElementById("correspondence-telephone").value = document.getElementById("residential-telephone").value;
+                document.getElementById("correspondence-telephone").value = document.getElementById(
+                    "residential-telephone").value;
                 document.getElementById("correspondence-fax").value = document.getElementById("residential-fax").value;
-                document.getElementById("correspondence-emergency").value = document.getElementById("residential-emergency").value;
+                document.getElementById("correspondence-emergency").value = document.getElementById(
+                    "residential-emergency").value;
 
             } else {
                 document.getElementById("correspondence").value = "";
