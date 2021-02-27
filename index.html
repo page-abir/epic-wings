@@ -9,6 +9,12 @@
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>IGMSSS - Admission Form Page 1</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
         .special {
             width: 100%;
             height: calc(1.5em + .75rem + 2px);
@@ -17,11 +23,31 @@
             border-radius: .25rem;
             text-align: center;
         }
+
+        .heading {
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-size: 1.1em;
+        }
+
+        .box {
+            border: 1px solid gray;
+            background-color: rgb(247, 246, 242);
+        }
+
+        #whom,
+        #newspaper,
+        #pre-school,
+        #other {
+            display: none;
+        }
+
+        
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container box">
         <form action="form-process.php" method="post">
             <hr>
             <div class="card-deck">
@@ -157,7 +183,8 @@
 
                 <div class="row pt-4">
                     <div class="col-12">
-                        <label for="academic-background">Academy Background Of Child</label>
+
+                        <h3 class="heading">Academy Background Of Child</h3>
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="previous-school">Previous School</label>
@@ -174,7 +201,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12 mt-2">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th scope="col">Final Marks Of Previous Year</th>
@@ -185,28 +212,40 @@
                                     <tbody>
                                         <tr>
                                             <td>English</td>
-                                            <td><input type="number" name="english-full-marks" class="form-control" id="english-full-marks" placeholder="0"></td>
-                                            <td><input type="number" name="english-obtained-marks" class="form-control" id="english-obtained-marks" placeholder="0"></td>
+                                            <td><input type="number" name="english-full-marks" class="form-control"
+                                                    id="english-full-marks" placeholder="0"></td>
+                                            <td><input type="number" name="english-obtained-marks" class="form-control"
+                                                    id="english-obtained-marks" placeholder="0"></td>
                                         </tr>
                                         <tr>
                                             <td>Hindi</td>
-                                            <td><input type="number" name="hindi-full-marks" class="form-control" id="hindi-full-marks" placeholder="0"></td>
-                                            <td><input type="number" name="hindi-obtained-marks" class="form-control" id="hindi-obtained-marks" placeholder="0"></td>
+                                            <td><input type="number" name="hindi-full-marks" class="form-control"
+                                                    id="hindi-full-marks" placeholder="0"></td>
+                                            <td><input type="number" name="hindi-obtained-marks" class="form-control"
+                                                    id="hindi-obtained-marks" placeholder="0"></td>
                                         </tr>
                                         <tr>
                                             <td>Maths</td>
-                                            <td><input type="number" name="maths-full-marks" class="form-control" id="maths-full-marks" placeholder="0"></td>
-                                            <td><input type="number" name="maths-obtained-marks" class="form-control" id="maths-obtained-marks" placeholder="0"></td>
+                                            <td><input type="number" name="maths-full-marks" class="form-control"
+                                                    id="maths-full-marks" placeholder="0"></td>
+                                            <td><input type="number" name="maths-obtained-marks" class="form-control"
+                                                    id="maths-obtained-marks" placeholder="0"></td>
                                         </tr>
                                         <tr>
                                             <td>Social Science (Hist., Geog.)</td>
-                                            <td><input type="number" name="social-science-full-marks" class="form-control" id="social-science-full-marks" placeholder="0"></td>
-                                            <td><input type="number" name="social-science-obtained-marks" class="form-control" id="social-science-obtained-marks" placeholder="0"></td>
+                                            <td><input type="number" name="social-science-full-marks"
+                                                    class="form-control" id="social-science-full-marks" placeholder="0">
+                                            </td>
+                                            <td><input type="number" name="social-science-obtained-marks"
+                                                    class="form-control" id="social-science-obtained-marks"
+                                                    placeholder="0"></td>
                                         </tr>
                                         <tr>
                                             <td>Science</td>
-                                            <td><input type="number" name="science-full-marks" class="form-control" id="science-full-marks" placeholder="0"></td>
-                                            <td><input type="number" name="science-obtained-marks" class="form-control" id="science-obtained-marks" placeholder="0"></td>
+                                            <td><input type="number" name="science-full-marks" class="form-control"
+                                                    id="science-full-marks" placeholder="0"></td>
+                                            <td><input type="number" name="science-obtained-marks" class="form-control"
+                                                    id="science-obtained-marks" placeholder="0"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -214,12 +253,270 @@
                         </div>
                     </div>
                 </div>
-    </div>
-    </fieldset>
-    </form>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <h3 class="heading">family information</h3>
+                        <h6>Father / Guardian:</h6>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-4">
+                        <label for="father-name">Name</label>
+                        <input type="text" name="father-name" id="father-name" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="father-age">Age</label>
+                        <input type="text" name="father-age" id="father-age" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="father-nationality">Nationality</label>
+                        <input type="text" name="father-nationality" id="father-nationality" class="form-control">
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-6">
+                        <label for="father-education">Educational Qualification</label>
+                        <input type="text" name="father-education" id="father-education" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="father-institution">Institution</label>
+                        <input type="text" name="father-institution" id="father-institution" class="form-control">
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-6">
+                        <label for="father-organisation">Organisation Working for</label>
+                        <input type="text" name="father-organisation" id="father-organisation" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="father-designation">Designation</label>
+                        <input type="text" name="father-designation" id="father-designation" class="form-control">
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <label for="father-office">Office Address</label>
+                        <textarea name="father-office" id="father-office" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-md-6">
+                        <label for="father-income">Annual Income</label>
+                        <input type="text" name="father-income" id="father-income" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="father-telephone">Tel</label>
+                        <input type="text" name="father-telephone" id="father-telephone" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <label for="father-hours-of-interaction">No. of Hours of interaction with the child per
+                            week</label>
+                        <input type="text" name="father-hours-of-interaction" id="father-hours-of-interaction"
+                            class="form-control">
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <h6>Mother / Guardian:</h6>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-4">
+                        <label for="mother-name">Name</label>
+                        <input type="text" name="mother-name" id="mother-name" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="mother-age">Age</label>
+                        <input type="text" name="mother-age" id="mother-age" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="mother-nationality">Nationality</label>
+                        <input type="text" name="mother-nationality" id="mother-nationality" class="form-control">
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-6">
+                        <label for="mother-education">Educational Qualification</label>
+                        <input type="text" name="mother-education" id="mother-education" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mother-institution">Institution</label>
+                        <input type="text" name="mother-institution" id="mother-institution" class="form-control">
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-md-6">
+                        <label for="mother-organisation">Organisation Working for</label>
+                        <input type="text" name="mother-organisation" id="mother-organisation" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mother-designation">Designation</label>
+                        <input type="text" name="mother-designation" id="mother-designation" class="form-control">
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <label for="mother-office">Office Address</label>
+                        <textarea name="mother-office" id="mother-office" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-md-6">
+                        <label for="mother-income">Annual Income</label>
+                        <input type="text" name="mother-income" id="mother-income" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mother-telephone">Tel</label>
+                        <input type="text" name="mother-telephone" id="mother-telephone" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <label for="mother-hours-of-interaction">No. of Hours of interaction with the child per
+                            week</label>
+                        <input type="text" name="mother-hours-of-interaction" id="mother-hours-of-interaction"
+                            class="form-control">
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <label for="divorced-separated-widowed">If parents are divorced, living separately or widowed,
+                            with whom is the child living?</label>
+                        <input type="text" name="divorced-separated-widowed" id="divorced-separated-widowed"
+                            class="form-control">
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <h3 class="heading">questions</h3>
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <label for="why-igmsss">What are your reasons for choosing :
+                            <span class="heading">
+                                indira gandhi memorial sr. secondary school
+                            </span>
+                        </label>
+                        <textarea name="mother-office" id="mother-office" rows="5" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <label for="why-igmsss">How did you learn about :
+                            <span class="heading">
+                                indira gandhi memorial sr. secondary school
+                            </span>
+                        </label>
+                        <div class="form-group">
+                            <select class="form-control" id="howDidYouLearnAbout">
+                                <option>Choose Your Answer</option>
+                                <option onclick="whom();">Through Word of mouth</option>
+                                <option onclick="newspaper();">Through Newspaper Advertisement</option>
+                                <option onclick="preschool();">Through Pre-School</option>
+                                <option onclick="other();">Any Other</option>
+                            </select>
+                        </div>
+
+                        <div id="whom">
+                            <label for="from-whom">From whom</label>
+                            <input type="text" name="from-whom" id="from-whom" class="form-control">
+                        </div>
+
+                        <div id="newspaper">
+                            <label for="name-of-newspaper">Name of Newspaper</label>
+                            <input type="text" name="name-of-newspaper" id="name-of-newspaper" class="form-control">
+                        </div>
+
+                        <div id="pre-school">
+                            <label for="name-pre-school">Name</label>
+                            <input type="text" name="name-pre-school" id="name-pre-school" class="form-control">
+                        </div>
+
+                        <div id="other">
+                            <label for="any-other">Any Other</label>
+                            <input type="text" name="any-other" id="any-other" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <h3 class="heading">signature</h3>
+                    </div>
+                </div>
+
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <p class="text-justify">
+                            I hereby certify that the information given in the Admission form is complete and accurate.
+                            I understand and agree that misrepresentation or omission of fact will justify the denial of
+                            admission, the cancellation or admission or expulsion.
+                        </p>
+
+                        <div class="row pt-4">
+                            <div class="col-6"></div>
+                            <div class="col-6">
+                                <div class="card-deck">
+                                    <div class="card">
+                                        <!--<img src="https://dummyimage.com/150x150/26fca3/000000"
+                                            id="signature-father-or-mother-preview" class="card-img-top" alt="...">-->
+                                        <div class="card-body">
+                                            <h5 class="card-title">Signature of Father / Mother</h5>
+                                            <!-- <p class="card-text">Please affix your signature</p> -->
+                                            <input type="file" class="form-control-file" id="signature-father-or-mother"
+                                                onclick="clicked(this.id)">
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <!-- <img src="https://dummyimage.com/150x150/26fca3/000000"
+                                            id="signature-guardian-preview" class="card-img-top" alt="...">  -->
+                                        <div class="card-body">
+                                            <h5 class="card-title">Signature of Guardian</h5>
+                                            <!-- <p class="card-text">Please affix your signature</p> -->
+                                            <input type="file" class="form-control-file" id="signature-guardian"
+                                                onclick="clicked(this.id)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
     </div>
 
     <script>
+        function whom() {
+            document.getElementById("whom").style.display = "block";
+        }
+
+        function newspaper() {
+            document.getElementById("newspaper").style.display = "block";
+        }
+
+        function preschool() {
+            document.getElementById("pre-school").style.display = "block";
+        }
+
+        function other() {
+            document.getElementById("other").style.display = "block";
+        }
+
         function clicked(cur_id) {
             var pView = cur_id.concat("-preview")
             var fileTag = document.getElementById(cur_id),
